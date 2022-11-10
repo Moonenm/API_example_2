@@ -9,7 +9,8 @@ const router = require('./routes');
 const app = express();
 
 app.use(express.json());
-app.use('/.netlify/functions/api',router);
+app.use(router);
+//app.use('/.netlify/functions/api',router);
 
 mongoose.connect(process.env.CONNECTIONSTRING, {useNewUrlParser: true, useUnifiedTopology: true});
 module.exports.handler = serverless(app);
