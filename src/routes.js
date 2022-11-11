@@ -12,7 +12,7 @@ const Docent = require('./models/docent');
  */
 
  router.get('/index', function(req, res){
-  res.sendFile('../index.html');
+    res.sendFile('index.html', { root: '.' });
 });
 
 router.get('/', (req, res) => {
