@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
     '<h1>Welcome to my API, these are the available routes:</h1>'
 
     +'<h2>/</h2>'
-    +'Where you are right now'
+    +'Here is some details about API'
 
     +'<hr/>'
 
