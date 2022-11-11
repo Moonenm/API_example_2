@@ -85,6 +85,16 @@ router.get('/campus', async (req, res) => {
   }
 });
 
+router.post('/docent/create', async (req, res) => {
+  console.log('/docent/create route called');
+  try {
+    res.send(await Docent.create(req.body));
+  } catch(e) {
+    console.log(e);
+    res.sendStatus(500);
+  }
+});
+
 /**
  * Returns one single campus in the database using .findById(objectId)
  * Uses req.params.id, which means the id is passed in the url
