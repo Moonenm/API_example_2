@@ -10,6 +10,11 @@ const Docent = require('./models/docent');
 /**
  * Homepage where all routes are shown
  */
+
+ router.get('/index', function(req, res){
+  res.sendFile('../index.html');
+});
+
 router.get('/', (req, res) => {
   console.log('/ route called');
   res.send(
