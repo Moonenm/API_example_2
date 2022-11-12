@@ -7,8 +7,8 @@ describe('get campus', () => {
         .get('/.netlify/functions/api/campus')
         .expect(200)
         .expect('Content-Type', 'application/json; charset=utf-8')
-        .expect((res) => {
+        /*.expect((res) => {
             console.log(res.body[0])
-           })
+           })*/
     });
 });
