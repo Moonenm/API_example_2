@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Campus = require('./models/campus');
 const Docent = require('./models/docent');
+let fs = require('fs');
 
 /********************************/
 /*           Routes             */
@@ -12,7 +13,18 @@ const Docent = require('./models/docent');
  */
 
  router.get('/index', function(req, res){
-    res.sendFile('index.html', { root: '.' });
+  res.writeHead(200, {
+    'Content-Type': 'text/html'
+});
+fs.readFile('./index.html', null, function (error, data) {
+    if (error) {
+        res.writeHead(404);
+        res.write('Whoops! File not found!');
+    } else {
+        res.write(data);
+    }
+    res.end();
+});
 });
 
 router.get('/', (req, res) => {
