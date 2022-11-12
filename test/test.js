@@ -2,7 +2,7 @@
 const request =require ('supertest');
 
 describe('get campus', () => {
-    it('should return first campus', async (done) => {
+    it('should return first campus', async () => {
      await request('https://campus-api-example.netlify.app')
         .get('/.netlify/functions/api/campus')
         .expect(200)
@@ -10,6 +10,5 @@ describe('get campus', () => {
         .expect((res) => {
             console.log(res.body[0])
            })
-        .done
-    }).catch(done);
+    });
 });
