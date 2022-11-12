@@ -3,7 +3,6 @@ name: Node Build en test
 on: 
   push:
    branches: [master]
- 
   
 jobs:
   test_pull_request:
@@ -12,12 +11,12 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x, 17.x]
-        os: [Ubuntu-latest, windows-latest]
+        os: [ubuntu-latest, windows-latest]
     
     steps:
       - uses: actions/checkout@v2
       - name: use Node.js ${{matrix.node-version}}
-      - uses: actions/setup-node@v1
+        uses: actions/setup-node@v1
         with:
           node-version: ${{matrix.node-version}}
       - run: npm ci //clean install
