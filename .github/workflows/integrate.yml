@@ -7,12 +7,19 @@ on:
   
 jobs:
   test_pull_request:
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.os}}
+    
+    strategy:
+      matrix:
+        node-version: [16.x, 17.x]
+        os: [Ubuntu-latest, windows-latest]
+    
     steps:
       - uses: actions/checkout@v2
+      - name: use Node.js ${{matrix.node-version}}
       - uses: actions/setup-node@v1
         with:
-          node-version: 16
+          node-version: ${{matrix.node-version}}
       - run: npm ci //clean install
       - run: npm test
       - run: npm run build 
