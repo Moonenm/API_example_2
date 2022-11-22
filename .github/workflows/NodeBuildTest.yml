@@ -21,6 +21,7 @@ jobs:
           node-version: ${{matrix.node-version}}
       - run: npm ci //clean install
       - run: npm test
+      - run: npm run build 
       - name: upload artifact with JSON results
         uses: actions/upload-artifact@v3
         with:
@@ -28,4 +29,4 @@ jobs:
           path: output.json
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
-      - run: npm run build 
+
