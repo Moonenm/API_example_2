@@ -1,18 +1,18 @@
 name: CI+CD
 on:
   push:
-    branches[master]
+    branches: [master]
   pull_request:
-    branches[master]
+    branches: [master]
   workflow_dispatch:
   
 jobs:
- build:
-   runs-on: ubuntu-latest
-   steps:
-     - uses: actions/checkout@v2
-     - name: compile
-       run: echo Hello World
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: compile
+      run: echo Hello World
        
   staging:
     name: deploy to staging
