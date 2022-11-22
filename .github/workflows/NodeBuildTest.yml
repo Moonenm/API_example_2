@@ -27,6 +27,4 @@ jobs:
         with:
           name: output
           path: output.json
-      - name: Download all workflow run artifacts
-        uses: actions/download-artifact@v3
 
