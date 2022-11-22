@@ -7,6 +7,7 @@ address: {type: String},
 image: {type: String}
 
 },{
+    database:"Campussen",
     collection: 'Campus'
 });
 
