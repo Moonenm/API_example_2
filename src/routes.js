@@ -11,23 +11,7 @@ let fs = require('fs');
 /**
  * Homepage where all routes are shown
  */
-/*
- router.get('/index', function(req, res){
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.sendFile(__dirname + "/index.html");
-  fs.readFile('./index.html', null, function (error, data) {
-    if (error) {
-        res.write(__dirname + "/index.html");
-        res.writeHead(404);
-        res.write('Whoops! File not found!');
-    } else {
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        res.write(data);
-    }
-    res.end();
-});
-});
-*/
+
 router.get('/', (req, res) => {
   console.log('/ route called');
   res.send(
